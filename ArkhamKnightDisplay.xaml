@@ -1,0 +1,29 @@
+﻿<Window x:Class="ArkhamKnightDisplay.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArkhamKnightDisplay"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="304.509">
+    <Grid >
+        <Button Content="Start" HorizontalAlignment="Left" Margin="27.213,106.899,0,0" VerticalAlignment="Top" Width="75" Click="Start_Button_Click" Name="StartButton"/>
+        <Button Content="Stop" HorizontalAlignment="Left" Margin="114.142,106.899,0,0" VerticalAlignment="Top" Width="75" Click="Stop_Button_Click" Name="StopButton" IsEnabled="False"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="98.524,7.88,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="RoutePathBox"/>
+        <TextBlock HorizontalAlignment="Left" Margin="17.089,10,0,0" TextWrapping="Wrap" Text="Route CSV" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="98.524,37.067,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="SavePathBox"/>
+        <TextBlock HorizontalAlignment="Left" Margin="17.089,37.067,0,0" TextWrapping="Wrap" Text="SaveFilePath" VerticalAlignment="Top"/>
+        <RadioButton Content="Save 1" HorizontalAlignment="Left" Margin="19.362,72.209,0,0" VerticalAlignment="Top" GroupName="Save" Name="Save0"/>
+        <RadioButton Content="Save 2" HorizontalAlignment="Left" Margin="77.622,72.209,0,0" VerticalAlignment="Top" GroupName="Save" Name="Save1"/>
+        <RadioButton Content="Save 3" HorizontalAlignment="Left" Margin="135.882,72.209,0,0" VerticalAlignment="Top" GroupName="Save" Name="Save2"/>
+        <RadioButton Content="Save 4" HorizontalAlignment="Left" Margin="194.142,72.209,0,0" VerticalAlignment="Top" GroupName="Save" Name="Save3" IsChecked="True"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="520" VerticalAlignment="Top" Width="276.509" Margin="10,158.656,0,0" VerticalScrollBarVisibility="Auto" Name="GridScroll">
+            <Grid HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" Name="DisplayGrid"></Grid>
+        </ScrollViewer>
+        <CheckBox Content="1st End" HorizontalAlignment="Left" Margin="212.392,94,0,0" VerticalAlignment="Top" Name="FirstKnightfallBox"/>
+        <CheckBox Content="NG+" HorizontalAlignment="Left" Margin="212.392,111,0,0" VerticalAlignment="Top" Name="NGPlusBox"/>
+        <CheckBox Content="120%" HorizontalAlignment="Left" Margin="212.392,127,0,0" VerticalAlignment="Top" Name="OneTwentyBox"/>
+
+
+    </Grid>
+</Window>
