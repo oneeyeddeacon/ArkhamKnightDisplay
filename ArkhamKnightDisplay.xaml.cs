@@ -127,6 +127,7 @@ namespace ArkhamKnightDisplay
             String saveFileText = System.IO.File.ReadAllText(GetSaveFileFullPath(savepath, saveindex));
             int firstNotDoneIndex = -1;
             bool isNewGamePlus = NGPlusBox.IsChecked.Value;
+            bool is120 = OneTwentyBox.IsChecked.Value;
             int minRequiredMatches = isNewGamePlus ? 1 : 0;
             int lineCount = 1;
             for (int index = 0; index < routeLines.Length; index++)
@@ -140,6 +141,10 @@ namespace ArkhamKnightDisplay
                 string[] lineComponents = line.Split('\t');
 
                 if (isNewGamePlus && (isRiddlerCollectible(lineComponents[1]) || isUpgrade(lineComponents[1]) || isCornerCase(lineComponents[0])))
+                {
+                    continue;
+                }
+                if (!is120 && isSeasonOfInfamy(lineComponents[1]))
                 {
                     continue;
                 }
@@ -177,6 +182,15 @@ namespace ArkhamKnightDisplay
                 int scrollHeight = (firstNotDoneIndex - 6) * (ROW_HEIGHT);
                 GridScroll.ScrollToVerticalOffset(scrollHeight);
             }
+        }
+
+        private bool isSeasonOfInfamy(String categoryName)
+        {
+            return
+                string.Equals("Mad Hatter", categoryName) ||
+                string.Equals("Freeze", categoryName) ||
+                string.Equals("Killer Croc", categoryName) ||
+                string.Equals("League of Assassins", categoryName);
         }
 
         private bool isUpgrade(String checkpointName)
