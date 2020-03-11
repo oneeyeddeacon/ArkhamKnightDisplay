@@ -126,6 +126,7 @@ namespace ArkhamKnightDisplay
 
             String saveFileText = System.IO.File.ReadAllText(GetSaveFileFullPath(savepath, saveindex));
             int firstNotDoneIndex = -1;
+            int secondNotDoneIndex = -1;
             bool isNewGamePlus = NGPlusBox.IsChecked.Value;
             bool is120 = OneTwentyBox.IsChecked.Value;
             int minRequiredMatches = isNewGamePlus ? 1 : 0;
@@ -173,13 +174,23 @@ namespace ArkhamKnightDisplay
                 {
                     firstNotDoneIndex = lineCount;
                 }
+                else if (secondNotDoneIndex < 0)
+                {
+                    secondNotDoneIndex = lineCount;
+                }
                 lineCount++;
             }
 
-            if (firstNotDoneIndex > -1)
+            if (firstNotDoneIndex > -1 && IgnoreFirst.IsChecked.Value == false)
             {
                 double numInViewport = GridScroll.Height / ROW_HEIGHT;
                 int scrollHeight = (firstNotDoneIndex - 6) * (ROW_HEIGHT);
+                GridScroll.ScrollToVerticalOffset(scrollHeight);
+            }
+            else if (secondNotDoneIndex > -1 && IgnoreFirst.IsChecked.Value == true)
+            {
+                double numInViewport = GridScroll.Height / ROW_HEIGHT;
+                int scrollHeight = (secondNotDoneIndex - 6) * (ROW_HEIGHT);
                 GridScroll.ScrollToVerticalOffset(scrollHeight);
             }
         }

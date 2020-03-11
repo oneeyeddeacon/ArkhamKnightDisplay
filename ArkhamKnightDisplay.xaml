@@ -23,6 +23,7 @@
         <CheckBox Content="1st End" HorizontalAlignment="Left" Margin="212.392,94,0,0" VerticalAlignment="Top" Name="FirstKnightfallBox"/>
         <CheckBox Content="NG+" HorizontalAlignment="Left" Margin="212.392,111,0,0" VerticalAlignment="Top" Name="NGPlusBox"/>
         <CheckBox Content="120%" HorizontalAlignment="Left" Margin="212.392,127,0,0" VerticalAlignment="Top" Name="OneTwentyBox"/>
+        <CheckBox Content="Ignore First" HorizontalAlignment="Left" Margin="27.213,130.148,0,0" VerticalAlignment="Top" x:Name="IgnoreFirst"/>
 
 
     </Grid>
