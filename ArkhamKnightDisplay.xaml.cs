@@ -37,6 +37,7 @@ namespace ArkhamKnightDisplay
         public MainWindow()
         {
             InitializeComponent();
+            Style = (Style)FindResource(typeof(Window));
         }
 
         private void Stop_Button_Click(object sender, RoutedEventArgs e)

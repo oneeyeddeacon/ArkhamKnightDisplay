@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:ArkhamKnightDisplay"
              StartupUri="ArkhamKnightDisplay.xaml">
     <Application.Resources>
-         
+        <Style TargetType="{x:Type Window}">
+            <Setter Property="FontSize" Value="12" />
+        </Style>
     </Application.Resources>
 </Application>
